@@ -36,4 +36,10 @@ if not os.path.exists(backtest_path):
     os.makedirs(backtest_path)
 
 # ----- READ DATA -----
-returns = 2
+# Connect to database engine
+engine_path = os.path.join("data", "dtff_database.sqlite3")
+dtff_engine = db.create_engine('sqlite:///' + engine_path)
+
+returns = get_data_from_table("returns", dtff_engine)
+news_sentiment = get_data_from_table('Global_News_Sentiment_Macro', dtff_engine)
+classification = get_data_from_table('classification_risk_or_no_risk', dtff_engine)
