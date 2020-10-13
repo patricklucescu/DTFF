@@ -1,0 +1,14 @@
+asset,description,high_risk_environment,low_risk_environment
+bonds,Bonds CHF,1,0
+bonds_global_gov,Bonds Global Government (CHF hedged),1,0
+bonds_global,Bonds Global (CHF hedged),1,0
+bonds_em_hc,Bonds Emerging Markets hard currency (CHF hedged),0,0
+bonds_em_local,Bonds Emerging Markets local,0,0
+equities_ch,Equities Switzerland,0,1
+equities_global_dev,Equites Global Developed,0,1
+equities_em,Equities Emerging Markets,0,1
+equities_global_sc,Equities Global Small Cap,0,1
+private_equity,Private Equity,0,1
+infrastructure,Infrastructure,0,0
+ils,ILS (desmoothed),0,0
+gold,Gold,1,0
