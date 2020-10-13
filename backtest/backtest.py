@@ -1,17 +1,20 @@
-##### DTFF PROJETC ######
+##### DTFF PROJECT ######
 ## Authors:
 ##      - Santiago Walliser
 ##      - Björn Bloch
+##      - Patrick Lucescu
 
 
 # ----- IMPORT LIBRARIES -----
 import sys
 import numpy as np
 import os
+import sqlalchemy as db
 from scipy.cluster.hierarchy import linkage
 from scipy.spatial.distance import squareform
 import matplotlib.pyplot as plt
 import pandas as pd
+from backtest.external_functions import *
 
 # ----- BACKTEST SETTINGS -----
 LOOKBACK = 12  # How many months should be lookback period be for the computation of correlation matrix used in Raffinot approach.
@@ -32,3 +35,5 @@ backtest_path = os.path.join("output", BACKTEST_NAME)
 if not os.path.exists(backtest_path):
     os.makedirs(backtest_path)
 
+# ----- READ DATA -----
+returns = 2
