@@ -8,6 +8,9 @@
 import sqlalchemy as db
 import pandas as pd
 import numpy as np
+from scipy.cluster.hierarchy import linkage
+from scipy.spatial.distance import squareform
+
 
 
 def get_data_from_table(_table_name, _engine):
@@ -128,12 +131,10 @@ def get_tot_returns_cum_TC(tot_returns, trading_period_dates, adj_weights, retur
     return tot_returns_TC, tot_returns_TC_cum
 pass
 
+
 def get_risk_exposure_adjusted_weights(weights, bool_list_selection, low_risk_env=False, FACTOR=1.5):
     # Get selected assets and increasse exposure
     weights.loc[:, bool_list_selection] = weights.loc[:, bool_list_selection] * FACTOR
-    # If low_risk_env we do not invest in cash
-    if low_risk_env:
-        weights['Cash CHF'] = 0
     # Readjust weights, s.t. we have exposure of 100%
     weights = weights.div(weights.sum(axis=1).values[0])
     return weights
