@@ -112,7 +112,7 @@ for date_index, date in enumerate(investment_period):
         elif news_sentiment[date] <= (-1*BOUNDARY):  # high risk environment
             weights_single_temp = get_risk_exposure_adjusted_weights(weights_single_temp, high_risk_env_selection, FACTOR=FACTOR)
             weights_complete_temp = get_risk_exposure_adjusted_weights(weights_complete_temp, high_risk_env_selection, FACTOR=FACTOR)
-            weights_average_temp = get_risk_exposure_adjusted_weights(weights_average_temp, high_risk_env_selection,FACTOR=FACTOR)
+            weights_average_temp = get_risk_exposure_adjusted_weights(weights_average_temp, high_risk_env_selection, FACTOR=FACTOR)
             weights_ward_temp = get_risk_exposure_adjusted_weights(weights_ward_temp, high_risk_env_selection, FACTOR=FACTOR)
 
         # Update weight matrix we new data row
