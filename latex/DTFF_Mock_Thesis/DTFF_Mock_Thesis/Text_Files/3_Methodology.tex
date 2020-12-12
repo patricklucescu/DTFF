@@ -1,0 +1,35 @@
+\section{Methodology}
+
+\subsection{Asset Allocation}
+
+In a first step, we focus on the computation of the HCBAA weights. Let $f$ represent the HCBAA algorithm, which at time $t$ takes as input the asset correlation matrix $\mathbf{\Sigma_t^T}$ with a lookback window of $T$ periods as well as the desired clustering \texttt{method}. We make use of all the different presented clustering algorithms in order to compare their performances and therefore \texttt{method} $\in$ \{\texttt{single, complete, average, ward}\}. The function $f$ outputs then the corresponding robust weight vector $\mathbf{w_t^{HCBAA}}$ which contains the for each asset $i$ the corresponding weight $w_{t,i}^{HCBAA}$:
+\begin{align}
+    f(\mathbf{\Sigma_t^T}, \text{\texttt{method}}) = \mathbf{w_t^{HCBAA}}
+\end{align}
+
+The length of the lookback window $T$ is a hyper-parameter which can be tuned via cross validation. 
+
+In a second step, we focus on adjusting the risk of our exposure based on our prediction which relies on news sentiment. Latter time series ranges from $-1$ to $+1$, where a negative value indicates a negative sentiment and vice-versa. For this we create three groups of sub-asset classes: 
+
+\begin{itemize}
+    \item \textbf{High risk assets} which include equities
+    \item \textbf{Low risk assets} which include bonds
+    \item Non-risk-categorized assets such as infrastructure indices
+\end{itemize}{}
+
+In order to overweight our exposure to a sub-asset class at time $t$ we proceed as follows. Let $\lambda > 1$ be the factor by which the exposure is  increased. Further, let $j$ $\in$ \{\texttt{high risk, low risk}\} such that $o_{j,i}$ equals $\lambda$ if asset $i$ belongs to the sub-asset class indexed by $j$, otherwise $1$. Then, $\mathbf{o_j}$ is a vector which contains these $o_{j,i}$ values.  To adjust our allocation we modify $\mathbf{w_t^{HCBAA}}$ using $\mathbf{o_j}$ thereby obtaining our regime adjusted weights $\mathbf{w_t^{RA'}}$. For $N$ assets we have therefore following (exemplary) relation:
+
+\begin{equation}
+    \mathbf{w_t^{RA'}} = \mathbf{w_t^{HCBAA}} * \mathbf{o_j} = \left( \begin{matrix} w_{t,1}  \\ \vdots  \\ w_{t,N} \\ \end{matrix} \right) * \left( \begin{matrix} \lambda  \\ \vdots  \\ 1 \\ \end{matrix} \right)
+\end{equation}{}
+
+In order to regain an exposure of 100\% we re-normalize $\mathbf{w_t^{RA'}}$ such that the total sum of vector's element equals one again, yielding us the final regime adjusted weight vector $\mathbf{w_t^{RA}}$.
+
+\subsection{Investment Procedure}
+
+This weight finding procedure is repeated at every rebalancing key date. In the spirit of SAA, we rebalance every 12 month. We hold the same exposure during the whole holding period. 
+
+We initialize our research with a lookback window length $T$ of 12 months.  
+
+The $\lambda$ parameter allows investors to induce their risk-tolerance into the investment procedure. In order to have clearly distinguishable results, we set this factor to $2$, i.e. we double our exposure to the regime appropriate sub-asset class.
+

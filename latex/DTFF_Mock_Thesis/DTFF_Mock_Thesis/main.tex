@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{amsmath}
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[gen]{eurosym} % euro sign
+
+\usepackage{graphicx} % "demo" option just for this example
+\usepackage{subcaption}
+\usepackage{float}
+
+\renewcommand{\baselinestretch}{1.5} 
+
+%% BIB STUFF:
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\addbibresource{apt_bib.bib} % The filename of the bibliography
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+%\emergencystretch=1em % allows for an additional line-breaking pass with the amount of "tolerable" white space per line increased by 1em. Solving: Overfull hbox in biblatex (check StackExchange)
+\setlength\bibitemsep{1.15\itemsep} % sep between bib entries in bibliography
+
+\title{Mock Thesis: Regime Switching \\ {\large Combining Hierarchical Clustering-Based Asset Allocation \\ and News Sentiment}}
+
+
+\author{
+  Santiago~Walliser\\
+  Department of B \& F\\
+  University of Zurich\\
+  Zurich\\
+  \texttt{santiago.walliser@uzh.ch} \\
+  %% examples of more authors
+   \And
+  Patrick~Lucescu \\
+  Department of QF\\
+  University of Zurich\\
+  Zurich \\
+  \texttt{patrick.lucescu@uzh.ch} \\
+   \And
+  Bjoern~Bloch \\
+  Department of B \& F\\
+  University of Zurich\\
+  Zurich \\
+  \texttt{bjoern.bloch@uzh.ch} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a new model independent approach based on the ideas of \citeauthor{enhPortOpti} who proved that news sentiment can be used in the context of SAA. We first construct portfolios based on a hierarchical clustering-based asset allocation approach and then we further adjust the portfolios' exposure to risky assets by using macro news sentiment data. Results are promising with geometric Sharpe Ratio between 0.6 and 0.86 for the portfolios with no News Sentiment enhancement. However, we are unable to draw any conclusions on the effectiveness of the News Sentiment enhancement. Nevertheless, we can identify the portfolio based on the "ward" method as the overall best performer among no News Sentiment enhanced portfolios while the portfolio based on the "single" method is the best performer among the News Sentiment enhanced portfolios.
+\end{abstract}
+
+
+% keywords can be removed
+\keywords{ Strategic Asset Allocation, Regime Switching, News Sentiment, Hierarchical clustering-based asset allocation  }
+
+%{\bfseries \emph Wordcount} \hspace{0.05cm} 2200
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\input{Text_Files/1_Introduction.tex}
+\newpage
+\input{Text_Files/2_0_State_of_the_Art.tex}
+\input{Text_Files/2_1_Regime_Switching_LR.tex}
+\input{Text_Files/2_2_News_Sentiment_LR.tex}
+\input{Text_Files/2_3_HC_based_AA_LR.tex}
+\newpage
+\input{Text_Files/3_Methodology.tex}
+\newpage
+\input{Text_Files/4_Data.tex}
+\newpage
+\input{Text_Files/5_0_Results.tex}
+\newpage
+\input{Text_Files/6_0_Discussion.tex}
+\newpage
+\input{Text_Files/7_Conclusion.tex}
+\newpage
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

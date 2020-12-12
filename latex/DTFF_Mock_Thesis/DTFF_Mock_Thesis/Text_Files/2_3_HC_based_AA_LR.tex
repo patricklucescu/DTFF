@@ -1,0 +1,14 @@
+\subsection{Hierarchical Clustering-Based Asset Allocation}
+
+Since its inception in 1952, Markowitz's theory has been proven to be a significant stepping stone in modern portfolio construction. Despite its advertised diversification benefits, Markowitz's optimal portfolio exhibits some complications which make it somewhat unreliable in practice. 
+
+It is worth mentioning here the conditioning number of a matrix, which is the absolute value of the ratio between its maximal and minimal eigenvalues. The more correlated the investments, the higher the conditioning number which leads to unstable matrix inversion as a small change in one of the entries of the covariance matrix can lead to a completely different inverse. Consequently, Markowitz's curse states that the more correlated the investments, the greater the need for diversification, and yet the more likely we will receive unstable solutions. This is due to estimation erros in the covariance matrix.
+
+\citet{de2016building} introduces a portfolio diversification technique called "Hierarchical Risk Parity" (HRP) to address three major concerns with Markowitz's approach: instability, concentration and underperformance. It uses graph theory and machine learning techniques and one of the main advantages over quadratic optimizers is that it can compute a portfolio on an ill-degenerated or even a singular covariance matrix. The starting point of his analysis is that the correlation matrix lacks a hierarchical structure and as such it cannot differentiate between assets. As \citet{raffinot2017hierarchical} states: "Hierarchical clustering refers to the formation of a recursive clustering, suggested by the data, not defined a priori. The objective is to build a binary tree of the data that successively merges similar groups of points." \citet{de2016building} shows that this approach delivers lower out-of-sample variance than CLA or traditional risk parity methods (IVP).
+
+
+\citet{raffinot2017hierarchical} extends this idea by considering several variants of hierarchical clustering algorithm (Simple Linkage, Complete Linkage, Average Linkage, Ward’s Method). He concludes that the resulting portfolios are indeed diversified and achieve higher Adjusted Sharpe Ratios compared to standard methods.
+
+
+
+

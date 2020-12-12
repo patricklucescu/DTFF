@@ -1,0 +1,11 @@
+\section{Conclusion}
+
+The idea of regime switching is not new. Indeed, it has become popular through the work of \citet{ang2004regimes} and \citet{hamilton1989new}. Nevertheless, the underlying model is hard to estimate and has limited practical applicability. With the emergence of machine learning techniques and News Sentiment analysis, alternative models where data is allowed to speak for itself become more realistic.
+
+Our work derives from the research done by \citet{enhPortOpti} but we follow a model free approach in order to circumvent the limitations of mean variance optimization. As such, we rely on the HCBAA approach which was first introduced by \citet{de2016building} and later refined by \citet{raffinot2017hierarchical}. Our data set includes a variety of asset classes and the selection and hedging of the asset classes assumes an investor based in Switzerland. 
+
+In a first step we construct four portfolios, each based on a different hierarchical clustering method and we report their performance against two benchmarks, an equally weighted portfolio and an inverse volatility weighted portfolio. Overall, all four portfolios outperform the benchmarks in terms of geometric Sharpe Ratio and monthly geometric average total return. However, the portfolio performances vary when the starting month of the backtest is changed but the portfolio relaying on the "ward" methodology seems to be the best performer overall.
+
+In a second step, we introduce macro-economical News Sentiment as a way to adjust our exposure to risky assets. The riskiness of the assets is solely based on their beta. However, we are unable to draw a conclusion on the effectiveness of the News Sentiment enhancement as the enhanced portfolio can under perform depending on the starting month of the backtest. This could be due to the nature of our implementation as we only use one global macro News Sentiment variable. Thus, as future research it would be desirable to obtain News Sentiment time series for each individual asset and adjust exposure accordingly. Furthermore, it would be of interest to see what would happen if the trading window is decreased. However, this was outside of our scope of interest as we focused on Strategical Asset Allocation and not Tactical Asset Allocation.
+
+

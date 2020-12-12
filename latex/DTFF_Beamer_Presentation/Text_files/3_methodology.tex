@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Methodology
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Methodology}
+\begin{frame}[noframenumbering]
+	\begin{center}
+	    \textbf{\huge{Methodology}}
+	\end{center}
+\end{frame}
+
+%%% Asset Allocation %%%%%
+\begin{frame}{Asset Allocation}
+\textbf{First step:} Focus on the computation of the \textbf{HCBAA weights},
+\vspace{0.4cm}
+
+\begin{align*}
+    f(\mathbf{\Sigma_t^T}, \text{\texttt{method}}) = \mathbf{w_t^{HCBAA}}
+\end{align*}
+
+\vspace{0.4cm}
+
+where $\text{\texttt{method}} \in \{\text{\texttt{single}}, \text{\texttt{complete}}, \text{\texttt{average}}, \text{\texttt{ward}} \}$.
+
+\end{frame}
+
+\begin{frame}{Asset Allocation}
+\textbf{Second step:} Focus on adjusting the risk of our exposure based on our prediction which relies on news sentiment ($-1$ to $+1$).
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item \textbf{High risk assets} which include equities
+    \item \textbf{Low risk assets} which include bonds
+    \item Non-risk-categorized assets such as infrastructure indices
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Asset Allocation}
+
+Computation of risk adjusted weights \mathbf{w_t^{RA'}}
+
+\begin{equation*}
+    \mathbf{w_t^{RA'}} = \mathbf{w_t^{HCBAA}} * \mathbf{o_j} = \left( \begin{matrix} w_{t,1}  \\ \vdots  \\ w_{t,N} \\ \end{matrix} \right) * \left( \begin{matrix} \lambda  \\ \vdots  \\ 1 \\ \end{matrix} \right)
+\end{equation*}
+
+\vspace{0.2cm}
+
+where $j \in \{ \text{\texttt{high risk}}, \text{\texttt{ low risk}} \} $.
+
+\\\vspace{0.2cm}
+
+\textbf{Re-normalize} $\mathbf{w_t^{RA'}}$ $\rightarrow$ $\mathbf{w_t^{RA}}$ such that we have \textbf{100\% exposure} again.
+\end{frame}
+
+%%% Investment Procedure %%%%%
+\begin{frame}{Investment Procedure}
+We follow following \textbf{investment procedure}:
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item Weight finding procedure is repeated at \textbf{every rebalancing key date}
+    \item \textbf{Rebalance} every 12 month (SAA)
+    \item \textbf{Same exposure} during the whole holding period
+    \item \textbf{Lookback window} length $T$ of 12 months
+    \item \textbf{$\lambda$ parameter} as risk-tolerance proxy $\rightarrow$ To have clearly distinguishable results, we set this factor to $2$
+\end{itemize}
+
+\end{frame}

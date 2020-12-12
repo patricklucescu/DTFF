@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Data}
+\begin{frame}[noframenumbering]
+	\begin{center}
+	    \textbf{\huge{Data}}
+	\end{center}
+\end{frame}
+
+%%% Assets %%%%%
+\begin{frame}{Assets}
+\input{Text_files/4_data_table.tex}
+\end{frame}
+
+\begin{frame}{Assets}
+We want to be able to invest in all available assets. \\ \vspace{0.2cm} Therefore the data set ...
+\vspace{0.4cm}
+\begin{itemize}
+    \item \textbf{starts} on the 2003-01-31 \&
+    \item \textbf{ends} on the 2019-08-31.
+\end{itemize}{}
+\end{frame}
+
+%%% News Sentiment %%%%%
+\begin{frame}{News Sentiment}
+
+Same data set used by \citet{uhl2015s} and is provided by \textbf{Thomson Reuters}. 
+
+\vspace{0.2cm}
+
+Investing \textbf{globally} (in the context of \textbf{SAA \& RS}) $\rightarrow$ Focus on the \textbf{macro-economical news sentiment} with following indicators\footnote{\citep[p. 103]{uhl2015s}}:
+
+\begin{itemize}
+    \item Monetary Policy/ Central Bank Actions
+    \item Economic Indicators
+    \item Credit/ Government Debt Ratings
+    \item Politics/ War/ Environment
+\end{itemize}
+
+\vspace{0.2cm}
+
+
+
+\end{frame}
+
+%Using these indicators each news document is analyzed for its positive, neutral, and negative sentiment. A weight between 0 and 1 is then assigned to each sentiment, under the condition that the sum of the weights equals 1. The final sentiment weight that is assigned to a news document is the largest of those three sentiments. All these final news sentiment values are averaged for every day. We end up with a daily time series of macro-economical news sentiment.
+
+
+\begin{frame}{News Sentiment}
+Using these indicators each news document is analyzed for its \textbf{positive}, \textbf{neutral}, and \textbf{negative sentiment}. 
+\begin{itemize}
+    \item \textbf{Each document} is assigned a news sentiment $\in [-1, +1]$
+    \item Daily observations $\rightarrow$ very \textbf{noisy}
+    \item 10 day rolling \textbf{exponential weighted mean}
+    \item Shift data back by one day to remove any \textbf{forward looking bias}
+    \item Aggregate data to \textbf{monthly} by summing up
+    \item \textbf{Normalize} time series such that values $\in [-1, +1]$
+\end{itemize}
+\end{frame}
+
+
+
+
+
+

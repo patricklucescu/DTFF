@@ -1,0 +1,107 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[british]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{uzh}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath,bm}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
+%\bibliographystyle{apa}
+\usepackage{appendixnumberbeamer}
+\let\svthefootnote\thefootnote
+\usepackage[gen]{eurosym} % euro sign
+
+\usepackage{tcolorbox} % for theorem box
+\tcbuselibrary{theorems}
+
+\newtcbtheorem{def_box}{Definition}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+
+\definecolor{colortheme}{RGB}{0,87,163} 
+
+\title[Beamer Presentation: Regime Switching]{Beamer Presentation: Regime Switching \\ {\large Combining Hierarchical Clustering-Based Asset Allocation and News Sentiment}}
+\author[Bloch, Lucescu, Walliser]{Björn \textsc{Bloch}\\Patrick \textsc{Lucescu}\\Santiago \textsc{Walliser}}
+
+\institute[University of Zurich]{
+	Digital Tools for Finance\\
+	\vspace{0.5cm}
+	Dr. Igor \textsc{Pozdeev}\\
+	Dr. Dmitry \textsc{Borisenko}
+	}
+	
+\date[]{\today}
+
+\addbibresource{apt_bib.bib}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Introduction & Agenda
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/1_introduction_agenda.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% State of the Art
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/2_state_of_the_art.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Methodology
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/3_methodology.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/4_data.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Results & Discussion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/5_results_and_discussion.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Text_files/6_conclusion.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Q&A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\section{Q\&A}
+
+\begin{frame}
+	\begin{center}
+	    \textbf{\huge{Q\&A}}
+	\end{center}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]{References}
+    \printbibliography
+\end{frame}
+
+\end{document}
+
+
+
+
