@@ -1,3 +1,6 @@
 # DTFF
-course project
-test 123
+Authors:
+- Santiago Walliser
+- Patrick Lucescu
+- Björn Bloch
+
